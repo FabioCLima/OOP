@@ -2,7 +2,11 @@ import pytest
 import sys
 from pathlib import Path
 
-# get the parent directory and add it to the system path
+# ! This a way to make the imports easier 
+# * get the parent directory and add it to the system path
+# ? 
+# TODO: need to be done if want to import without problems
+
 parent_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_dir))
 

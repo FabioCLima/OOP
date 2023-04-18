@@ -1,4 +1,5 @@
-# OOP/product.py 
+# OOP/product_v2.py 
+# Esta versão implementa um método de classe para controlar o número de produtos criados
 
 class Product:
     """
@@ -18,6 +19,8 @@ class Product:
         >>> p1.price
         4500
     """
+    num_products = 0  # Class Attribute
+    
     def __init__(self, name: str, description: str, price: float) -> None:
         """
         The constructor for the Product class
@@ -29,6 +32,8 @@ class Product:
         self.name = name
         self.description = description
         self.price = price
+        Product.num_products += 1  # increment the number of products always the init method is
+                                   # called when a new instance of Product class is created.
         
     def __str__(self) -> str:
         """
@@ -44,8 +49,14 @@ class Product:
         Returns:
             str: a string representation of the instance.
         """        
-        return f"{__class__.__qualname__}('{self.name}', '{self.description}', {self.price})"    
+        # return f"{__class__.__name__}('{self.name}', '{self.description}', {self.price})"
+        return f"{type(self).__name__}({self.name}, {self.description}. {self.price})"    
 
 
 if __name__ == "__main__":
-    pass
+    
+    p1 = Product('S23+', 'Samsung mobile phone', '3900')
+    p2 = Product('S23', 'Samsung mobile phone', '3200')
+    p3 = Product('S23 Ultra', 'Samsung mobile phone', '4900')
+    
+    print(f"How many products were created: {Product.num_products}")

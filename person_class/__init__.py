@@ -1,0 +1,1 @@
+from person_class.tests import *

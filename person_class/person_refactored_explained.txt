@@ -1,0 +1,58 @@
+"""
+In the code above, we are using decorators to define property methods for the name and age
+attributes of the Person class.
+
+A decorator is a function that takes another function and extends the behavior of the latter
+function without explicitly modifying it. In Python, decorators are indicated by the @ symbol
+followed by the name of the decorator function.
+
+In the Person class, we are using the @property decorator to define getter methods for the name
+and age attributes. A property is a special kind of attribute that is accessed like an attribute
+but is computed on the fly.
+
+For example, when we call person.name, the name property method is called, which returns the 
+_name attribute. Similarly, when we call person.age, the age property method is called, which
+returns the _age attribute.
+
+We are also using the @name.setter and @age.setter decorators to define setter methods for the 
+name and age attributes. A setter is a special kind of method that is used to set the value of 
+a property.
+
+For example, when we call person.name = 'Alice', the name setter method is called, which sets the
+_name attribute to the value 'Alice'. Similarly, when we call person.age = 30, the age setter method
+is called, which sets the _age attribute to the value 30.
+
+Using property methods and setter methods can make the code more readable and maintainable, as it 
+encapsulates the logic of accessing and updating the attributes.
+
+"""
+
+class Rectangle:
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+    
+    @property
+    def width(self):
+        return self._width
+    
+    @width.setter
+    def width(self, value):
+        self._width = value
+    
+    @property
+    def height(self):
+        return self._height
+    
+    @height.setter
+    def height(self, value):
+        self._height = value
+    
+    def area(self):
+        return self._width * self._height
+
+rect = Rectangle(3, 4)
+print(rect.area())  # output: 12
+rect.width = 5
+rect.height = 6
+print(rect.area())  # output: 30

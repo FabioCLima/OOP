@@ -34,11 +34,11 @@ meant for developers and debugging purposes.
 get_born_year(self): Returns the year in which a person was born based on 
 the current_year and age of the person.
 """
-
+from datetime import datetime
 
 class Person:
     
-    current_year = 2023
+    current_year = datetime.now().year
     
     def __init__(self, name: str, age: int) -> None:
         self.name = name
@@ -50,7 +50,7 @@ class Person:
         Returns:
             str: a human-readable string representation of the object
         """     
-        return f"Person(name=({self.name}), age=({self.age}))"
+        return f"Person(name = {self.name}, age = {self.age})"
     
     def __repr__(self) -> str:
         """

@@ -1,0 +1,27 @@
+Encapsulation
+
+Refers the idea of hiding data and implementation details within an object and
+only exposing the necessary information to the outside world through well - 
+defined interfaces.
+
+Encapsulation allow us to protect the internal state of an object from being
+modified directly by other code, which helps to improve code reliability and
+maintainability.
+
+As example, there is the class BankAccount:
+
+Instance attributes: 
+    >>>_balance
+
+Methods: 
+    >>> deposit  : enforce constraints in _balance
+    >>> withdraw : enforce constraints in _balance
+
+    >>> get_balance - return the value of the attribute _balance, this method
+    provide a read-only interface to the user.
+
+    >>> using @property decorator, allow us access the 
+    _balance attribute as a property instead of directly
+    access the _balance attribute. This improve the 
+    overall readability of the code and provides more
+    control over how the attribute is accessed and used.

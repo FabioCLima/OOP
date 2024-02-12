@@ -1,0 +1,34 @@
+Object-oriented programming (OOP) is a programming paradigm that is based on the 
+concept of objects, which are instances of classes. A class is a blueprint that 
+defines the properties and methods of an object, and an object is a specific 
+instance of that class.
+
+One of the key principles of OOP is encapsulation, which means that the data and 
+behavior of an object are contained within that object and are not accessible to other 
+objects except through the object's public interface. This helps to keep the code 
+organized and modular, and makes it easier to maintain and modify.
+
+The statement you provided is highlighting one of the benefits of encapsulation.
+By encapsulating the data and behavior of an object within that object, we can 
+eliminate the need to depend on global data. Global data is data that is accessible 
+from anywhere in the program, and can be modified by any part of the program. This 
+can lead to issues with code complexity and maintainability, since changes to 
+global data can have unexpected effects on other parts of the program.
+
+In an object-oriented programming approach, each object has its own data and behavior, 
+and those are not accessible from other parts of the program except through the object's
+public interface. This means that changes to an object's data or behavior only affect 
+that object, and not other parts of the program. This makes it easier to reason about 
+the behavior of the program, and to make changes without unintended consequences.
+
+In summary, the oriented object programming approach allows the data and code of an 
+object to be at the same level, eliminating the need to depend on global data. 
+Encapsulation helps to keep the code organized and modular, and makes it easier to 
+maintain and modify.
+
+
+
+
+
+
+

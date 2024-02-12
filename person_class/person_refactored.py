@@ -1,13 +1,21 @@
 from datetime import datetime
 
+# ! Definition of getter and setter methods
+""" 
+In OOP, getter and setter methods are used to control access to the object's attributes
+they allow you to enforce constrains on how the attributes are accessed or  modified, 
+which can help to prevent bugs and ensure data consistency.
+
+Getter methods are used to retrieve the current value on attribute.
+"""
 
 class Person:
     """
     A class representing a person.
 
     Attributes:
-    name (str): Name of the person
-    age (int): Age of the person
+    __name (str): Name of the person
+    __age (int): Age of the person
     """
 
     def __init__(self, name: str, age: int):
@@ -31,7 +39,7 @@ class Person:
     @property
     def name(self) -> str:
         """
-        Returns the name attribute of the person object.
+        Returns the name attribute of the person object.This a getter method.
 
         Example:
             >>> john = Person('John', 30)
@@ -43,7 +51,7 @@ class Person:
     @name.setter
     def name(self, name: str) -> None:
         """
-        Updates the name attribute of the person object.
+        Updates the name attribute of the person object. This is a setter method.
 
         Example:
             >>> john = Person('John', 30)
@@ -76,7 +84,13 @@ class Person:
             >>> john.get_age()
             35
         """
-        self._age = age
+        if not isinstance(age, int):
+            raise ValueError("Age must be a integer")
+        
+        elif age < 0:
+            raise ValueError("Age must be a positive integer.")
+        else:
+            self._age = age
 
     def year_of_birth(self) -> int:
         """
@@ -117,4 +131,16 @@ class Person:
 import doctest
 
 if __name__ == "__main__":
-    doctest.testmod()
+    # doctest.testmod()
+    
+    p1 = Person("Leonildo", 93)
+    p2 = Person("Tim", 29)
+    p3 = Person("Nobody", 0)
+    p4 = Person("Jose", 'forty')
+
+print(f"The age of person1 is {p1.age} years old.")
+p1.age = 95
+print(f"The new age of person1 is {p1.age} years old.")
+print()
+print(f"The age of nobody is {p3.age} years old.")
+p3.age = -5

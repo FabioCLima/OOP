@@ -7,6 +7,8 @@
 
 -> Static methods can't modify either the class state or the instance state and are purely functional.
 '''
+from datetime import datetime
+
 
 class Employee:
     """
@@ -71,7 +73,7 @@ class Employee:
         return cls.id_counter
     
     @classmethod
-    def increment_num_employees(cls) -> int:
+    def num_employees(cls) -> int:
         """
         This method returns the number of employees created
 
@@ -91,11 +93,18 @@ class Employee:
         Returns:
             bool: True if the name provided is valid, False otherwise
         """ 
-        return isinstance(name, str) and bool(name.strip())   
+        return isinstance(name, str) and bool(name.strip())
+    
+    @staticmethod
+    def get_current_time() -> datetime:
+        time = datetime.now()
+        return time
     
 
 if __name__ == "__main__":
     
+    print(f"The current time is: {Employee.get_current_time()}")
+    print()
     print(f"Show the next employee id: {Employee.get_next_id()}")
     # Prompt user for employee name input
     employee_name = input("\nPlease enter the employee name: ")
@@ -106,7 +115,7 @@ if __name__ == "__main__":
         job_title = 'Data Analyst'
         employee1 = Employee(employee_name, job_title)
         print(f"New employee {employee1.name} with ID {employee1.id} has been created")
-        print(f"How many employees were created so far: {employee1.increment_num_employees()}")
+        print(f"How many employees were created so far: {employee1.num_employees()}")
     else:
         #! Handle invalid employee name input
         print("Invalid employee name provided. Please enter a valid name.")
@@ -120,7 +129,8 @@ if __name__ == "__main__":
         job_title2 = 'Sales Manager'
         employee2 = Employee(employee_name2, job_title2)
         print(f"New employee {employee2.name} with ID {employee2.id} has been created")
-        print(f"How many employees were created so far: {employee2.increment_num_employees()}")
+        print(f"How many employees were created so far: {employee2.num_employees()}")
+        print(f"The current time is: {employee2.get_current_time()}")
     else:
         #! Handle invalid employee name input
         print("Invalid employee name provided. Please enter a valid name.")

@@ -2,12 +2,14 @@
 # author: Fabio Lima
 # employee version 1
 '''
-#! Summary of the ideas study on this class: class method 
+#! Summary of the ideas study on this class: class method
 -> Class methods can modify the class state, but not the instance state
 
--> Static methods can't modify either the class state or the instance state and are purely functional.
+-> Static methods can't modify either the class state or the instance state
+and are purely functional.
 '''
 from datetime import datetime
+
 
 
 class Employee:
@@ -134,4 +136,3 @@ if __name__ == "__main__":
     else:
         #! Handle invalid employee name input
         print("Invalid employee name provided. Please enter a valid name.")
-    
